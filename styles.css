@@ -14,6 +14,20 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    color: var(--color3);
+}
+
+.custom-link {
+    color: var(--color3);
+}
+
+.btn-custom {
+    background-color: var(--color1);
+    color: var(--color3);
+}
+
+.menu {
+    background-color: var(--background-color);
 }
 
 /* .uno, .dos, .tres {
