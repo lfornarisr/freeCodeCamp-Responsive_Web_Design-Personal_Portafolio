@@ -1,0 +1,23 @@
+:root {
+    --color1:#393E46;
+    --color2:#2d333b;
+    --color3:#EEEEEE;
+    --orange:#D65A31;
+    --background-color:#222831;
+    --box-backround-fallback:#191e26;;
+    --box-background-gradient:linear-gradient(315deg, rgba(25,30,38,1) 0%, rgba(34,40,49,1) 30%, rgba(57,62,70,1) 80%);
+}
+
+.oranger {
+    color: var(--orange);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* .uno, .dos, .tres {
+    border: 1px solid black;
+    background-color: gray;
+    vertical-align: middle;
+} */
