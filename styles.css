@@ -1,3 +1,5 @@
+/* ESTILOS GENERALES */
+
 *, ::after, ::before {
     margin: 0;
     padding: 0;
@@ -21,6 +23,7 @@ html {
 }
 
 body {
+    min-width: 320px;
     background-color: var(--background-color);
     color: var(--color3);
     overflow: hidden;
@@ -28,28 +31,9 @@ body {
 
 section {
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-h1 {
-    font-size: 3rem;
-}
-
-p {
-    font-size: 1.8rem;
-}
-
-.orange__text {
-    color: var(--orange);
-}
-
-/* Requisito obligatorio */
-
-
-
-/* barra de navegación */
+/* BARRA DE NAVEGACION */
 
 #navbar {
     position: fixed;
@@ -64,27 +48,44 @@ p {
     z-index: 1;
 }
 
-a {
+.navbar__logo {
+    font-size: 3rem;
+    min-width: fit-content;
+}
+
+.oranger {
+    color: var(--orange);
+}
+
+i {
+    font-size: 3rem;
+    position: absolute;
+}
+
+.navbar__list {
+    display: flex;
+    min-width: fit-content;
+}
+
+.navbar__list > li {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.navbar__list > li > a {
+    display: block;
     color: var(--color3);
     text-decoration: none;
     font-size: 2rem;
-    padding: 0 2rem;
-    width: 100%;
+    min-width: fit-content;
 }
 
-a:hover {
+.navbar__list > li > a:hover {
     color: white;
 }
 
-ul {
-    display: flex;
-}
-
-li {
-    list-style: none;
-}
-
-.btn {
+.navbar__btn {
+    min-width: fit-content;
     cursor: pointer;
     background-color: var(--color1);
     color: inherit;
@@ -95,6 +96,20 @@ li {
     border-radius: 10px;
     font-weight: 600;
 }
+
+
+
+p {
+    font-size: 1.8rem;
+}
+
+
+
+/* Requisito obligatorio */
+
+
+
+/* barra de navegación */
 
 /* FLIPCARD */
 
@@ -154,6 +169,46 @@ section:target {
 }
 
 /* Media Queries */
+
+@media (max-width: 768px) and (min-width: 425px) {
+    #navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar__list {
+        justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+
+    .navbar__btn {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar__list > li {
+        margin-top: 1rem;
+    }
+
+    .navbar__btn {
+        margin-top: 1rem;
+    }
+}
 
 /* Keyframes */
 
