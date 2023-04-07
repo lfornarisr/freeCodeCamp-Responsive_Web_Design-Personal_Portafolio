@@ -29,6 +29,7 @@ body {
 
 section {
     height: 100vh;
+    padding-top: 6rem;
 }
 
 #navbar {
@@ -40,6 +41,15 @@ section {
     align-items: center;
     background-color: var(--background-color);
 /*     display: none; */
+}
+
+#navbar {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    transition-duration: 1s;
 }
 
 #navbar > * {
@@ -103,6 +113,34 @@ p {
     padding: 1rem 2rem;
     border-radius: 10px;
     font-weight: 500;
+}
+
+.logo {
+    background-color: var(--background-color);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+    height: 5rem;
+    z-index: 10;
+}
+
+#toggler {
+    display: none;
+}
+
+#toggler:checked ~ nav {
+    transition-duration: 1s;
+    top: 5rem;
+}
+
+.hamburguer {
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 .cards-container {
