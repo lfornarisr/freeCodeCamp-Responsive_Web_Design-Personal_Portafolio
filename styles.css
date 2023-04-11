@@ -18,9 +18,10 @@
 
 html {
     font-size: 62.5%;
-/*     scroll-behavior: smooth; */
     font-family: 'Poppins', sans-serif;
 }
+
+/* SELECTORES DE TIPO */
 
 body {
     background-color: var(--background-color);
@@ -30,10 +31,6 @@ body {
 section {
     height: 100vh;
     padding-top: 6rem;
-}
-
-.header-content > * {
-    width: 100%;
 }
 
 h1 {
@@ -55,19 +52,15 @@ p {
     color: var(--font-color2);
 }
 
+/* ----------------------------------- */
+
+.header-content > * {
+    width: 100%;
+}
+
 .oranger {
     color: var(--orange);
 }
-
-
-
-
-
-
-
-
-
-
 
 /* HEADER */
 
@@ -111,25 +104,45 @@ p {
     color: var(--orange);
 }
 
+/* BUTTON */
+
 .btn {
+    position: relative;
     cursor: pointer;
     padding: 1rem 1.5rem;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    border-radius: 5px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight:600;
     border: none;
     outline: none;
-    background-color: var(--color1);
-    color: inherit;
+    background-color: var(--font-color1);
+    color: black;
+    z-index: 1;
 }
 
-.btn:hover {
-    box-shadow: 0 0 0 1px var(--font-color2);
+.btn::before {
+    content: "";
+    position: absolute;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    left: 0;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: var(--orange);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    right: 0;
 }
 
 .navbar-btn {
     margin: 1rem 0;
 }
+
+/* DESPLEGABLE */
 
 .hamburguer {
     color: var(--font-color2);
@@ -150,6 +163,8 @@ i {
 #toggler:checked ~ .header-content > label > i {
     transform: rotate(180deg);
 }
+
+/* GRID */
 
 .cards-container {
     width: 80%;
