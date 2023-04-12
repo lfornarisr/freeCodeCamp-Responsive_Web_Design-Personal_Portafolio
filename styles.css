@@ -47,9 +47,19 @@ h3 {
     font-size: 3.5rem;
 }
 
+h4 {
+    font-size: 2rem;
+}
+
 p {
     font-size: 1.5rem;
     color: var(--font-color2);
+}
+
+
+i {
+    transition-property: transform;
+    transition-duration: 1s;
 }
 
 /* ----------------------------------- */
@@ -79,6 +89,7 @@ p {
     left: 0;
     width: 100%;
     transition: 1s;
+    z-index: 100;
 }
 
 .header-content:last-child {
@@ -155,11 +166,6 @@ p {
     transition-duration: 1s;
 }
 
-i {
-    transition-property: transform;
-    transition-duration: 1s;
-}
-
 #toggler:checked ~ .header-content > label > i {
     transform: rotate(180deg);
 }
@@ -170,7 +176,7 @@ i {
     width: 80%;
     margin: 0 auto;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     grid-template-areas: 
     "box1"
     "box2"
@@ -186,18 +192,23 @@ i {
 .box {
     background: var(--box-backround-fallback);
     background: var(--box-background-gradient);
+    box-shadow: 0 0 5px 2px var(--box-backround-fallback);
+    padding: 2rem;
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.box1 {
-    border-radius: 90px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    padding: 5rem;
+.box:hover {
+    transform: scale(1.01);
+}
+
+.box1 {    
     grid-area: box1;
-    display: flex;
+    text-align: center;
+    overflow: hidden;
+/*     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+     */
 }
 
 img {
@@ -205,17 +216,25 @@ img {
     width: 100%;
 }
 
-.img-container {
-    width: 100%;
+.cardMediaContainer {
     overflow: hidden;
-    border-radius: 60px;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
     margin-bottom: 3rem;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .box2 {
+    background: 0;
+    box-shadow: none;
+    border-radius: 0;
+    align-items: center;
+    padding: 0;
     grid-area: box2;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    overflow: hidden;
+    animation: none;
 }
 .box3 {
     grid-area: box3;
@@ -259,5 +278,33 @@ img {
         "box1 box1 box3 box4"
         "box5 box6 box6 box7"
         "box8 box8 box9 box9";
+    }
+}
+
+.signature {
+    text-align: center;
+    font-family: 'League Script', cursive;
+    font-size: 7rem;
+    text-transform: capitalize;
+    color: var(--font-color1);
+}
+
+.marquee {
+    flex-shrink: 0;
+    animation: scrolling 5s linear infinite;
+}
+
+.point {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }
