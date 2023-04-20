@@ -142,10 +142,11 @@ section {
 }
 
 .cards-container {
-    margin: 0 auto;
     width: 80%;
     display: grid;
     gap: 2rem;
+    overflow: hidden;
+    margin: 0 auto;
     grid-template-areas: 
     "card1"
     "card2"
@@ -193,6 +194,7 @@ section {
 /* CARDS */
 
 .card {
+    width: 100%;
     background: var(--box-backround-fallback);
     background: var(--box-background-gradient);
     border-radius: 5px;
@@ -262,7 +264,7 @@ section {
 .signature {
     text-align: center;
     font-family: 'League Script', cursive;
-    font-size: 7rem;
+    font-size: 5rem;
     font-weight: normal;
     text-transform: capitalize;
     color: var(--font-color1);
